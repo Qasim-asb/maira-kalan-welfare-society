@@ -1,0 +1,72 @@
+import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+import Reveal from './Reveal'
+
+const PHONE_NUMBER = '0313-6646515'
+const EMAIL = 'mairakalanwelfaresociety@gmail.com'
+
+const Contact = () => {
+  return (
+    <section id='contact' className='bg-[#f4f7f5] px-5 py-20 text-[#071b18] sm:px-8 sm:py-24 lg:px-10 lg:py-28'>
+      <div className='mx-auto max-w-7xl'>
+        <div className='grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20'>
+          <Reveal>
+            <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-emerald-700'>09 · Contact</p>
+            <h2 className='mt-4 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-6xl'>
+              Stay connected
+              <span className='text-emerald-700'>
+                {' '}
+                with the community.
+              </span>
+            </h2>
+            <p className='mt-6 max-w-lg text-base leading-7 text-[#071b18]/55 sm:text-lg sm:leading-8'>
+              For information about the society, its activities, membership,
+              or community welfare initiatives, you can reach out using the
+              available contact details.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className='grid gap-3 sm:grid-cols-2'>
+              <a href={`tel:${PHONE_NUMBER}`} className='group rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
+                <div className='flex items-start justify-between'>
+                  <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
+                    <Phone size={20} />
+                  </div>
+                  <ArrowUpRight size={18} className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
+                </div>
+                <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Phone</p>
+                <p className='mt-2 text-lg font-bold'>{PHONE_NUMBER}</p>
+                <p className='mt-2 text-sm text-[#071b18]/45'>Tap to call</p>
+              </a>
+              <a href={`mailto:${EMAIL}`} className='group rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
+                <div className='flex items-start justify-between'>
+                  <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
+                    <Mail size={20} />
+                  </div>
+                  <ArrowUpRight size={18} className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
+                </div>
+                <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Email</p>
+                <p className='mt-2 break-all text-base font-bold'>{EMAIL}</p>
+                <p className='mt-2 text-sm text-[#071b18]/45'>Send an email</p>
+              </a>
+              <div className='group rounded-[2rem] bg-[#071b18] p-6 text-white sm:col-span-2 sm:p-7'>
+                <div className='flex items-start justify-between'>
+                  <div className='grid size-11 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
+                    <MapPin size={20} />
+                  </div>
+                </div>
+                <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-white/35'>Community</p>
+                <p className='mt-2 text-xl font-bold'>Namli Maira</p>
+                <p className='mt-2 text-sm leading-6 text-white/45'>
+                  Maira Kalan Welfare Society · Serving the local community
+                  through collective effort.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Contact
