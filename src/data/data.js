@@ -40,12 +40,96 @@ export const expenditureDetails = [
 ]
 
 export const galleryItems = [
-  { image: '/gallery/project-1.jpeg', title: 'Community Welfare', category: 'Welfare' },
-  { image: '/gallery/project-2.jpeg', title: 'Education Support', category: 'Education' },
-  { image: '/gallery/project-3.jpeg', title: 'Students Support', category: 'Students' },
-  { image: '/gallery/project-4.jpeg', title: 'Community Activities', category: 'Community' },
-  { image: '/gallery/project-5.jpeg', title: 'Collective Effort', category: 'Society' },
-  { image: '/gallery/project-6.jpeg', title: 'Serving Together', category: 'Welfare' }
+  {
+    image: `${import.meta.env.BASE_URL}gallery/health-support.jpeg`,
+    title: 'Mobile Health Support',
+    category: 'Health',
+    alt: 'Mobile health support activity in the community'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/education-supplies.jpeg`,
+    title: 'Educational Supplies',
+    category: 'Education',
+    alt: 'Educational supplies prepared for students'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/student-support-01.jpeg`,
+    title: 'Supporting Students',
+    category: 'Education',
+    alt: 'Students gathered during an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/student-support-02.jpeg`,
+    title: 'Education Support',
+    category: 'Education',
+    alt: 'Students receiving educational support'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/student-recognition-01.jpeg`,
+    title: 'Recognizing Students',
+    category: 'Education',
+    alt: 'Students and community members during a recognition activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/student-recognition-02.jpeg`,
+    title: 'Student Recognition',
+    category: 'Education',
+    alt: 'Student receiving recognition during a community activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/community-gathering.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/school-bags-01.jpeg`,
+    title: 'School Bag Support',
+    category: 'Education',
+    alt: 'Students with school bags provided through an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/school-bags-02.jpeg`,
+    title: 'Supporting Schoolchildren',
+    category: 'Education',
+    alt: 'Schoolchildren with educational support items'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/community-activity.jpeg`,
+    title: 'Community Activity',
+    category: 'Community',
+    alt: 'Community members participating in a welfare activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/society-recognition.jpeg`,
+    title: 'Community Recognition',
+    category: 'Recognition',
+    alt: 'Society members presenting recognition during a community activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/community-meeting.jpeg`,
+    title: 'Community Meeting',
+    category: 'Community',
+    alt: 'Community members gathered for a society meeting'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/student-support-03.jpeg`,
+    title: 'Student Support',
+    category: 'Education',
+    alt: 'Students receiving support through a welfare activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/community-gathering-02.jpeg`,
+    title: 'Together as a Community',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/education-activity.jpeg`,
+    title: 'Education in Action',
+    category: 'Education',
+    alt: 'Students participating in an education support activity'
+  }
 ]
 
 export const timeline = [

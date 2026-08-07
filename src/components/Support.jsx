@@ -2,19 +2,22 @@ import { useState } from 'react'
 import { Check, Copy, HeartHandshake, Smartphone } from 'lucide-react'
 import Reveal from './Reveal'
 
-const EASYPAISA_NUMBER = '0313-6646515'
+const PAYMENT_NUMBERS = [
+  { name: 'EasyPaisa', display: '0347-7174477', value: '03477174477' },
+  { name: 'JazzCash', display: '0303-9636125', value: '03039636125' }
+]
 
 const Support = () => {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(null)
 
-  const copyNumber = async () => {
+  const copyNumber = async (number, name) => {
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(EASYPAISA_NUMBER)
+        await navigator.clipboard.writeText(number)
       } else {
         const textArea = document.createElement('textarea')
 
-        textArea.value = EASYPAISA_NUMBER
+        textArea.value = number
         textArea.style.position = 'fixed'
         textArea.style.opacity = '0'
 
@@ -28,13 +31,13 @@ const Support = () => {
         textArea.remove()
       }
 
-      setCopied(true)
+      setCopied(name)
 
       setTimeout(() => {
-        setCopied(false)
+        setCopied(null)
       }, 2000)
     } catch (error) {
-      console.error('Failed to copy EasyPaisa number:', error)
+      console.error(`Failed to copy ${name} number:`, error)
     }
   }
 
@@ -72,30 +75,35 @@ const Support = () => {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className='flex h-full flex-col justify-between rounded-[2rem] bg-[#b7e36b] p-7 text-[#071b18] sm:p-10'>
-              <div>
-                <div className='flex items-center justify-between gap-4'>
-                  <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
-                    <Smartphone size={21} />
-                  </div>
-                  <span className='rounded-full bg-[#071b18]/10 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.16em]'>EasyPaisa</span>
+            <div className='flex h-full flex-col rounded-[2rem] bg-[#b7e36b] p-7 text-[#071b18] sm:p-10'>
+              <div className='flex items-center justify-between gap-4'>
+                <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
+                  <Smartphone size={21} />
                 </div>
-                <p className='mt-10 text-xs font-extrabold uppercase tracking-[0.2em] text-[#071b18]/45'>Contribution Account</p>
-                <p className='mt-3 break-all text-3xl font-extrabold tracking-tight sm:text-4xl'>{EASYPAISA_NUMBER}</p>
+                <span className='rounded-full bg-[#071b18]/10 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.16em]'>Contributions</span>
               </div>
-              <button type='button' onClick={copyNumber} className='mt-10 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#071b18] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#0d302b] active:scale-[0.98]'>
-                {copied ? (
-                  <>
-                    <Check size={18} />
-                    Number copied
-                  </>
-                ) : (
-                  <>
-                    <Copy size={18} />
-                    Copy number
-                  </>
-                )}
-              </button>
+              <p className='mt-10 text-xs font-extrabold uppercase tracking-[0.2em] text-[#071b18]/45'>Contribution Accounts</p>
+              <div className='mt-6 space-y-4'>
+                {PAYMENT_NUMBERS.map(payment => (
+                  <div key={payment.name} className='rounded-2xl bg-white/30 p-4'>
+                    <p className='text-xs font-extrabold uppercase tracking-[0.16em] text-[#071b18]/50'>{payment.name}</p>
+                    <p className='mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl'>{payment.display}</p>
+                    <button type='button' onClick={() => copyNumber(payment.value, payment.name)} className='mt-3 flex items-center gap-2 rounded-xl bg-[#071b18] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#0d302b] active:scale-[0.98]'>
+                      {copied === payment.name ? (
+                        <>
+                          <Check size={16} />
+                          Number copied
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={16} />
+                          Copy number
+                        </>
+                      )}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>

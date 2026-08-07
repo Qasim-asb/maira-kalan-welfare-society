@@ -33,3 +33,26 @@ a {
   background: rgba(110, 231, 183, 0.35);
   color: #071b18;
 }
+
+.gallery-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #1b765d #d8d0bd;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-track {
+  background: #d8d0bd;
+  border-radius: 9999px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: #1b765d;
+  border-radius: 9999px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb:hover {
+  background: #071b18;
+}

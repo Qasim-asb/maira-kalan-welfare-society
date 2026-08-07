@@ -38,7 +38,7 @@ const Funds = () => {
               <WalletCards size={25} className='text-emerald-700' />
               <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Total Expenditures</p>
               <p className='mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl'>
-                <Counter value={272850} prefix='Rs. ' />
+                <Counter value={273850} prefix='Rs. ' />
               </p>
             </div>
           </Reveal>
@@ -103,7 +103,7 @@ const Funds = () => {
               <div className='mt-6 flex items-center justify-between border-t border-white/10 pt-5'>
                 <span className='text-sm font-bold text-white/60'>Total Expenditures</span>
                 <span className='text-lg font-extrabold'>
-                  <Counter value={272850} prefix='Rs. ' />
+                  <Counter value={273850} prefix='Rs. ' />
                 </span>
               </div>
             </div>

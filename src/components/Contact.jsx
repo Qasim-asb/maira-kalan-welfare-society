@@ -1,8 +1,11 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import Reveal from './Reveal'
 
-const PHONE_NUMBER = '0313-6646515'
-const EMAIL = 'mairakalanwelfaresociety@gmail.com'
+const PHONE_NUMBERS = [
+  { display: '0347-7174477', link: '+923477174477' },
+  { display: '0303-9636125', link: '+923039636125' }
+]
+const EMAIL = 'mkwsociety2022@gmail.com'
 
 const Contact = () => {
   return (
@@ -26,7 +29,7 @@ const Contact = () => {
           </Reveal>
           <Reveal delay={0.1}>
             <div className='grid gap-3 sm:grid-cols-2'>
-              <a href={`tel:${PHONE_NUMBER}`} className='group rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
+              <div className='group rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
                     <Phone size={20} />
@@ -34,9 +37,15 @@ const Contact = () => {
                   <ArrowUpRight size={18} className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
                 </div>
                 <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Phone</p>
-                <p className='mt-2 text-lg font-bold'>{PHONE_NUMBER}</p>
-                <p className='mt-2 text-sm text-[#071b18]/45'>Tap to call</p>
-              </a>
+                <div className='mt-2 space-y-1'>
+                  {PHONE_NUMBERS.map(phone => (
+                    <a key={phone.link} href={`tel:${phone.link}`} className='block text-lg font-bold transition hover:text-emerald-700'>
+                      {phone.display}
+                    </a>
+                  ))}
+                </div>
+                <p className='mt-2 text-sm text-[#071b18]/45'>Tap a number to call</p>
+              </div>
               <a href={`mailto:${EMAIL}`} className='group rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
@@ -45,7 +54,7 @@ const Contact = () => {
                   <ArrowUpRight size={18} className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
                 </div>
                 <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Email</p>
-                <p className='mt-2 break-all text-base font-bold'>{EMAIL}</p>
+                <p className='mt-2 break-all text-base font-bold transition group-hover:text-emerald-700'>{EMAIL}</p>
                 <p className='mt-2 text-sm text-[#071b18]/45'>Send an email</p>
               </a>
               <div className='group rounded-[2rem] bg-[#071b18] p-6 text-white sm:col-span-2 sm:p-7'>
