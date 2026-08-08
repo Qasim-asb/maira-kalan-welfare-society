@@ -41,7 +41,7 @@ const Gallery = () => {
 
         <div className='gallery-scroll relative mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden pb-4 sm:mt-14 sm:gap-5'>
           {galleryItems.map((item, i) => (
-            <article key={i} className='group relative h-[280px] w-[320px] shrink-0 snap-start overflow-hidden rounded-[24px] bg-[#071b18] sm:h-[340px] sm:w-[420px]'>
+            <article key={i} className='group relative h-[220px] w-[260px] shrink-0 snap-start overflow-hidden rounded-[24px] bg-[#071b18] sm:h-[250px] sm:w-[290px] md:h-[320px] md:w-[390px] lg:h-[340px] lg:w-[420px]'>
               <button type='button' onClick={() => setSelectedIndex(i)} className='absolute inset-0 z-10 cursor-zoom-in' aria-label={`View ${item.title}`} />
               <img src={item.image} alt={item.alt} loading={i < 2 ? 'eager' : 'lazy'} className='h-full w-full object-cover transition duration-700 group-hover:scale-105' />
 
