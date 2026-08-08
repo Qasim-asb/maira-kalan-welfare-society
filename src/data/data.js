@@ -1,14 +1,13 @@
 import { GraduationCap, HandHeart, UsersRound, HeartHandshake, Shirt, School } from 'lucide-react'
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
+  { label: 'Home', href: '/' },
   { label: 'Introduction', href: '#introduction' },
   { label: 'Programs', href: '#programs' },
   { label: 'Funds', href: '#funds' },
   { label: 'Team', href: '#team' },
   { label: 'Projects', href: '#projects' },
   { label: 'Gallery', href: '#gallery' },
-  { label: 'Support', href: '#support' },
   { label: 'Contact', href: '#contact' }
 ]
 
