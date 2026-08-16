@@ -9,7 +9,7 @@ const Funds = () => {
       <div className='mx-auto max-w-7xl'>
         <div className='grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-16'>
           <Reveal>
-            <p className='text-sm font-bold uppercase tracking-[0.25em] text-emerald-700'>Financial Transparency</p>
+            <p className='text-sm font-bold uppercase tracking-[0.25em] text-emerald-700'>03 · Financial Transparency</p>
             <h2 className='mt-3 max-w-lg text-4xl font-extrabold leading-[1] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
               Every contribution
               <span className='text-emerald-700'> has a purpose.</span>

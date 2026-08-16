@@ -54,7 +54,7 @@ const Support = () => {
               <div className='grid size-12 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
                 <HeartHandshake size={23} />
               </div>
-              <p className='mt-8 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>08 · Support</p>
+              <p className='mt-8 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>10 · Support</p>
               <h2 className='mt-3 max-w-2xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
                 Help us continue
                 <span className='text-[#b7e36b]'>

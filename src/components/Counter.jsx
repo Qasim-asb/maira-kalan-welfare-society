@@ -2,14 +2,10 @@ import { useEffect, useState } from 'react'
 
 const Counter = ({ value, duration = 1600, prefix = '', suffix = '', separator = true }) => {
   const [count, setCount] = useState(0)
-  const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
-    if (hasStarted) return
-
-    setHasStarted(true)
-
     const startTime = performance.now()
+    let animationFrame
 
     const animate = (currentTime) => {
       const elapsed = currentTime - startTime
@@ -21,14 +17,18 @@ const Counter = ({ value, duration = 1600, prefix = '', suffix = '', separator =
       setCount(currentValue)
 
       if (progress < 1) {
-        requestAnimationFrame(animate)
+        animationFrame = requestAnimationFrame(animate)
       } else {
         setCount(value)
       }
     }
 
-    requestAnimationFrame(animate)
-  }, [duration, hasStarted, value])
+    animationFrame = requestAnimationFrame(animate)
+
+    return () => {
+      cancelAnimationFrame(animationFrame)
+    }
+  }, [duration, value])
 
   const formattedValue = separator ? count.toLocaleString('en-US') : count
 

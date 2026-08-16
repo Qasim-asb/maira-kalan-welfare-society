@@ -10,7 +10,7 @@ const Introduction = () => {
       <div className='relative mx-auto max-w-7xl'>
         <div className='grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20'>
           <Reveal>
-            <p className='text-sm font-bold uppercase tracking-[0.25em] text-emerald-700'>Our Story</p>
+            <p className='text-sm font-bold uppercase tracking-[0.25em] text-emerald-700'>01 · Our Story</p>
             <h2 className='mt-3 max-w-lg text-4xl font-extrabold leading-[1] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
               From a conversation
               <span className='text-emerald-700'>

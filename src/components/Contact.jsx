@@ -13,7 +13,7 @@ const Contact = () => {
       <div className='mx-auto max-w-7xl'>
         <div className='grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20'>
           <Reveal>
-            <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-emerald-700'>09 · Contact</p>
+            <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-emerald-700'>11 · Contact</p>
             <h2 className='mt-4 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-6xl'>
               Stay connected
               <span className='text-emerald-700'>

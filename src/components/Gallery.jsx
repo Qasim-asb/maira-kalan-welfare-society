@@ -17,7 +17,7 @@ const Gallery = () => {
       <div className='mx-auto max-w-7xl'>
         <div className='flex flex-col justify-between gap-7 md:flex-row md:items-end'>
           <Reveal>
-            <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-[#1b765d]'>07 · Gallery</p>
+            <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-[#1b765d]'>09 · Gallery</p>
             <h2 className='mt-4 max-w-3xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-6xl'>
               Moments of
               <br />

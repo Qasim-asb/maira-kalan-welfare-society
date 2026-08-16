@@ -7,7 +7,7 @@ const Projects = () => {
     <section id='projects' className='bg-[#071b18] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10 lg:py-28'>
       <div className='mx-auto max-w-7xl'>
         <Reveal>
-          <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-[#b7e36b]'>06 · Community Work</p>
+          <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-[#b7e36b]'>08 · Community Work</p>
           <div className='mt-4 flex flex-col justify-between gap-7 md:flex-row md:items-end'>
             <h2 className='max-w-3xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-6xl'>
               Turning collective effort
