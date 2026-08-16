@@ -9,6 +9,9 @@ import Gallery from './components/Gallery'
 import Support from './components/Support'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import GeneralBody from './components/GeneralBody'
+import FounderMembers from './components/FounderMembers'
+import FormerMembers from './components/FormerMembers'
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Programs />
         <Funds />
         <Team />
+        <GeneralBody />
+        <FounderMembers />
+        <FormerMembers />
         <Projects />
         <Gallery />
         <Support />
