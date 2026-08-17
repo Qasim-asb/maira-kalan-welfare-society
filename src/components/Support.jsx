@@ -48,14 +48,16 @@ const Support = () => {
       <div className='pointer-events-none absolute -left-40 bottom-0 size-80 rounded-full bg-[#b7e36b]/5 blur-3xl' />
 
       <div className='relative mx-auto max-w-7xl'>
+        <Reveal>
+          <p className='mb-8 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>10 · Support</p>
+        </Reveal>
         <div className='grid gap-6 lg:grid-cols-[1fr_0.8fr] lg:gap-8'>
           <Reveal>
             <div className='rounded-[2rem] border border-white/10 bg-white/[0.035] p-7 sm:p-10 lg:p-12'>
               <div className='grid size-12 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
                 <HeartHandshake size={23} />
               </div>
-              <p className='mt-8 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>10 · Support</p>
-              <h2 className='mt-3 max-w-2xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
+              <h2 className='mt-8 max-w-2xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
                 Help us continue
                 <span className='text-[#b7e36b]'>
                   {' '}

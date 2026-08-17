@@ -26,7 +26,7 @@ const FormerMembers = () => {
 
         <div className='mt-12 grid grid-cols-2 gap-3 sm:mt-14 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5'>
           {formerMembers.map((person, i) => (
-            <Reveal key={i} delay={i * 0.03}>
+            <Reveal key={person.name} delay={i * 0.03}>
               <article className='group overflow-hidden rounded-[22px] bg-white/5 p-2.5 transition duration-300 hover:-translate-y-1.5 hover:bg-white/10 sm:rounded-[24px] sm:p-3'>
                 <div className='aspect-square overflow-hidden rounded-[17px] bg-[#0d3b35] sm:rounded-[19px]'>
                   <img

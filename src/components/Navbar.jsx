@@ -5,12 +5,12 @@ import { navLinks } from '../data/data'
 const goHome = (e) => {
   e.preventDefault()
   window.scrollTo({ top: 0, behavior: 'smooth' })
-  window.history.replaceState(null, '', '/')
+  window.history.replaceState(null, '', import.meta.env.BASE_URL)
 }
 
 const Logo = () => {
   return (
-    <a href='/' onClick={goHome} className='flex min-w-0 shrink-0 items-center gap-3' aria-label='Maira Kalan Welfare Society - Home'>
+    <a href={import.meta.env.BASE_URL} onClick={goHome} className='flex min-w-0 shrink-0 items-center gap-3' aria-label='Maira Kalan Welfare Society - Home'>
       <div className='grid size-11 shrink-0 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18] shadow-[0_10px_30px_rgba(183,227,107,.2)]'>
         <HeartHandshake size={23} strokeWidth={2.4} />
       </div>
@@ -31,7 +31,7 @@ const Navbar = () => {
   const closeMenu = () => setOpen(false)
 
   useEffect(() => {
-    const sections = ['home', ...navLinks.map(item => item.href.replace('#', '')), 'support']
+    const sections = ['home', ...navLinks.filter(item => item.href.startsWith('#')).map(item => item.href.slice(1)), 'support']
 
     const observer = new IntersectionObserver(
       entries => {
@@ -90,8 +90,8 @@ const Navbar = () => {
             <Logo />
 
             <div className='hidden items-center gap-5 lg:flex xl:gap-7'>
-              {navLinks.map((item, i) => (
-                <a key={i} href={item.href} onClick={item.label === 'Home' ? goHome : undefined} className={`whitespace-nowrap text-sm font-medium transition ${activeSection === item.href.replace('#', '') ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
+              {navLinks.map(item => (
+                <a key={item.label} href={item.href} onClick={item.label === 'Home' ? goHome : undefined} className={`whitespace-nowrap text-sm font-medium transition ${activeSection === item.href.replace('#', '') ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
                   {item.label}
                 </a>
               ))}
@@ -109,8 +109,8 @@ const Navbar = () => {
           {open && (
             <div className='max-h-[calc(100dvh-90px)] overflow-y-auto border-t border-white/10 pb-2 pt-3 lg:hidden'>
               <div className='grid gap-1'>
-                {navLinks.map((item, i) => (
-                  <a key={i} href={item.href}
+                {navLinks.map(item => (
+                  <a key={item.label} href={item.href}
                     onClick={e => {
                       if (item.label === 'Home') {
                         goHome(e)

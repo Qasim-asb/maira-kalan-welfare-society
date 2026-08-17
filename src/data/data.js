@@ -1,7 +1,7 @@
 import { GraduationCap, HandHeart, UsersRound, HeartHandshake, Shirt, School } from 'lucide-react'
 
 export const navLinks = [
-  { label: 'Home', href: '/' },
+  { label: 'Home', href: import.meta.env.BASE_URL },
   { label: 'Introduction', href: '#introduction' },
   { label: 'Programs', href: '#programs' },
   { label: 'Funds', href: '#funds' },
@@ -262,7 +262,7 @@ export const formerMembers = [
   },
   {
     image: `${import.meta.env.BASE_URL}former-members/m-ashfaq.jpeg`,
-    name: 'M.Ashfaq',
+    name: 'M. Ashfaq',
     role: 'Ex. SC Member',
     position: 'center 18%'
   },
@@ -287,6 +287,67 @@ export const formerMembers = [
     name: 'Imran Nabi',
     role: 'Ex. SC Member',
     position: 'center 28%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/shazad-shamraiz.jpeg`,
+    name: 'Mr. Shazad Shamraiz',
+    role: 'Ex. SC Member',
+    position: 'center 22%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/abdul-basit.jpeg`,
+    name: 'Mr. Abdul Basit',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/tahir-faraz.jpeg`,
+    name: 'Mr. Tahir Faraz',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/malik-moiz-altaf.jpeg`,
+    name: 'Mr. Malik Moiz Altaf',
+    role: 'Ex. SC Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/raja-matloob.jpeg`,
+    name: 'Mr. Raja Matloob',
+    role: 'Ex. SC Member',
+    position: 'center 28%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/maqbool-ahmad.jpeg`,
+    name: 'Mr. Maqbool Ahmad',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/babar-ali.jpeg`,
+    name: 'Mr. Babar Ali',
+    role: 'Ex. SC Member',
+    position: 'center 23%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/m-zahid.jpeg`,
+    name: 'Mr. M. Zahid',
+    role: 'Ex. SC Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/m-rizwan.jpeg`,
+    name: 'Mr. M. Rizwan',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/sardar-imtiaz.jpeg`,
+    name: 'Mr. Sardar Imtiaz',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/raja-ishtiaq.jpeg`,
+    name: 'Mr. Raja Ishtiaq',
+    role: 'Ex. SC Member',
+    position: 'center 33%'
   }
 ]
 
