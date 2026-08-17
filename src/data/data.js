@@ -397,6 +397,11 @@ export const formerMembers = [
     name: 'Mr. Raja Ishtiaq',
     role: 'Ex. SC Member',
     position: 'center 33%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/danish-shamraiz.jpeg`,
+    name: 'Mr. Danish Shamraiz',
+    role: 'Ex. SC Member'
   }
 ]
 
