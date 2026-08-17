@@ -27,9 +27,9 @@ const Contact = () => {
               available contact details.
             </p>
           </Reveal>
-          <Reveal delay={0.1}>
-            <div className='grid gap-3 sm:grid-cols-2'>
-              <div className='group rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
+          <div className='grid gap-3 sm:grid-cols-2'>
+            <Reveal delay={0.1}>
+              <div className='group h-full rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
                     <Phone size={20} />
@@ -46,7 +46,9 @@ const Contact = () => {
                 </div>
                 <p className='mt-2 text-sm text-[#071b18]/45'>Tap a number to call</p>
               </div>
-              <a href={`mailto:${EMAIL}`} className='group rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <a href={`mailto:${EMAIL}`} className='group block h-full rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
                     <Mail size={20} />
@@ -57,7 +59,9 @@ const Contact = () => {
                 <p className='mt-2 break-all text-base font-bold transition group-hover:text-emerald-700'>{EMAIL}</p>
                 <p className='mt-2 text-sm text-[#071b18]/45'>Send an email</p>
               </a>
-              <div className='group rounded-[2rem] bg-[#071b18] p-6 text-white sm:col-span-2 sm:p-7'>
+            </Reveal>
+            <Reveal delay={0.22}>
+              <div className='group h-full rounded-[2rem] bg-[#071b18] p-6 text-white sm:col-span-2 sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
                     <MapPin size={20} />
@@ -70,8 +74,8 @@ const Contact = () => {
                   through collective effort.
                 </p>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

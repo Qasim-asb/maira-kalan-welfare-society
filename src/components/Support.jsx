@@ -49,7 +49,7 @@ const Support = () => {
 
       <div className='relative mx-auto max-w-7xl'>
         <Reveal>
-          <p className='mb-8 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>10 · Support</p>
+          <p className='mb-8 sm:mb-10 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>10 · Support</p>
         </Reveal>
         <div className='grid gap-6 lg:grid-cols-[1fr_0.8fr] lg:gap-8'>
           <Reveal>
@@ -66,8 +66,7 @@ const Support = () => {
               </h2>
               <p className='mt-6 max-w-xl text-base leading-7 text-white/50 sm:text-lg sm:leading-8'>
                 Those who wish to support the welfare activities of Maira Kalan
-                Welfare Society can contribute through the EasyPaisa account
-                below.
+                Welfare Society can contribute through the EasyPaisa or JazzCash account.
               </p>
               <p className='mt-5 max-w-xl text-sm leading-6 text-white/30'>
                 Every contribution can help support education, welfare,
@@ -76,7 +75,7 @@ const Support = () => {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.12}>
             <div className='flex h-full flex-col rounded-[2rem] bg-[#b7e36b] p-7 text-[#071b18] sm:p-10'>
               <div className='flex items-center justify-between gap-4'>
                 <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
@@ -110,7 +109,7 @@ const Support = () => {
           </Reveal>
         </div>
 
-        <Reveal delay={0.1}>
+        <Reveal delay={0.2}>
           <p className='mt-6 text-center text-xs leading-5 text-white/25'>
             Please verify the account details before making any contribution.
           </p>

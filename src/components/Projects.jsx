@@ -26,7 +26,7 @@ const Projects = () => {
             const Icon = project.icon
 
             return (
-              <Reveal key={i} delay={i * 0.06}>
+              <Reveal key={project.title} delay={i * 0.06}>
                 <article className='group relative min-h-[300px] h-full overflow-hidden rounded-[26px] border border-white/10 bg-white/[0.04] p-6 transition duration-300 hover:-translate-y-1.5 hover:bg-white/[0.065]'>
 
                   <div className='absolute -right-8 -top-8 size-32 rounded-full bg-[#b7e36b]/10 blur-2xl transition group-hover:bg-[#b7e36b]/20' />
