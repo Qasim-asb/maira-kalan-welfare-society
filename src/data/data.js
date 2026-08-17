@@ -12,17 +12,66 @@ export const navLinks = [
 ]
 
 export const team = [
-  { image: `${import.meta.env.BASE_URL}team/aftab-umar.jpeg`, name: 'Sardar Aftab Umar', role: 'President' },
-  { image: `${import.meta.env.BASE_URL}team/zafar-iqbal.jpeg`, name: 'Mr. Zafar Iqbal', role: 'Vice President' },
-  { image: `${import.meta.env.BASE_URL}team/amjad-zareen.jpeg`, name: 'Mr. Amjad Zareen', role: 'General Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/sardar-arshad.jpeg`, name: 'Sardar Muhammad Arshad', role: 'Deputy General Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/imran-nabi.jpeg`, name: 'Mr. Sardar Imran Nabi', role: 'Finance Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/muhammad-arshad.jpeg`, name: 'Muhammad Arshad', role: 'Deputy Finance Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/farhan-gohar.jpeg`, name: 'Mr. Hafiz Farhan Gohar', role: 'Information Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/shehzad-rabbani.jpeg`, name: 'Mr. Shehzad Rabbani', role: 'Joint Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/sajjad-ahmad.jpeg`, name: 'Mr. Sajjad Ahmad', role: 'Office Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/saad-ilyas.jpeg`, name: 'Mr. Saad Ilyas', role: 'Honorary Member' },
-  { image: `${import.meta.env.BASE_URL}team/izzaz-safeer.jpeg`, name: 'Mr. Sardar Izzaz Safeer', role: 'Honorary Member' }
+  {
+    image: `${import.meta.env.BASE_URL}team/aftab-umar.jpeg`,
+    name: 'Sardar Aftab Umar',
+    role: 'President'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/zafar-iqbal.jpeg`,
+    name: 'Mr. Zafar Iqbal',
+    role: 'Vice President',
+    position: 'center 40%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/amjad-zareen.jpeg`,
+    name: 'Mr. Amjad Zareen',
+    role: 'General Secretary',
+    position: 'center 35%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/sardar-arshad.jpeg`,
+    name: 'Sardar Muhammad Arshad',
+    role: 'Deputy General Secretary',
+    position: 'center 45%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/imran-nabi.jpeg`,
+    name: 'Mr. Sardar Imran Nabi',
+    role: 'Finance Secretary',
+    position: 'center 45%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/muhammad-arshad.jpeg`,
+    name: 'Muhammad Arshad',
+    role: 'Deputy Finance Secretary',
+    position: 'center 20%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/farhan-gohar.jpeg`,
+    name: 'Mr. Hafiz Farhan Gohar',
+    role: 'Information Secretary'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/shehzad-rabbani.jpeg`,
+    name: 'Mr. Shehzad Rabbani',
+    role: 'Joint Secretary'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/sajjad-ahmad.jpeg`,
+    name: 'Mr. Sajjad Ahmad',
+    role: 'Office Secretary'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/saad-ilyas.jpeg`,
+    name: 'Mr. Saad Ilyas',
+    role: 'Honorary Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/izzaz-safeer.jpeg`,
+    name: 'Mr. Sardar Izzaz Safeer',
+    role: 'Honorary Member'
+  }
 ]
 
 export const generalBody = [
