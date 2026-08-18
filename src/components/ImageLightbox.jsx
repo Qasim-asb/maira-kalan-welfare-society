@@ -1,24 +1,75 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { ArrowLeft, ArrowRight, X } from 'lucide-react'
 
 const ImageLightbox = ({ item, onClose, onPrevious, onNext, ariaLabel = 'Image preview', subtitle }) => {
+  const closeButtonRef = useRef(null)
+  const previousFocusRef = useRef(null)
+
   useEffect(() => {
     if (!item) return
 
-    const handleKeyDown = e => {
-      if (e.key === 'Escape') onClose()
-      if (e.key === 'ArrowLeft') onPrevious()
-      if (e.key === 'ArrowRight') onNext()
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
+    previousFocusRef.current = document.activeElement
+    closeButtonRef.current?.focus()
 
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
 
     return () => {
-      document.removeEventListener('keydown', handleKeyDown)
       document.body.style.overflow = previousOverflow
+
+      if (previousFocusRef.current instanceof HTMLElement) {
+        previousFocusRef.current.focus()
+      }
+    }
+
+    // ImageLightbox mounts only when item exists, so this effect intentionally runs once per lightbox instance.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (!item) return
+
+    const handleKeyDown = e => {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        onClose()
+        return
+      }
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        onPrevious()
+        return
+      }
+
+      if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        onNext()
+        return
+      }
+
+      if (e.key === 'Tab') {
+        const focusableElements = document.querySelectorAll('[data-lightbox-focusable]')
+
+        if (!focusableElements.length) return
+
+        const firstElement = focusableElements[0]
+        const lastElement = focusableElements[focusableElements.length - 1]
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault()
+          lastElement.focus()
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault()
+          firstElement.focus()
+        }
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
     }
   }, [item, onClose, onPrevious, onNext])
 
@@ -26,13 +77,13 @@ const ImageLightbox = ({ item, onClose, onPrevious, onNext, ariaLabel = 'Image p
 
   return (
     <div onClick={onClose} role='dialog' aria-modal='true' aria-label={ariaLabel} className='fixed inset-0 z-50 flex items-center justify-center bg-[#071b18]/95 p-5 backdrop-blur-sm sm:p-8'>
-      <button type='button' onClick={onClose} aria-label='Close photo' className='absolute right-5 top-5 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18]'>
+      <button ref={closeButtonRef} type='button' onClick={onClose} aria-label='Close photo' data-lightbox-focusable className='absolute right-5 top-5 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18]'>
         <X size={21} aria-hidden='true' />
       </button>
       <button type='button' onClick={e => {
         e.stopPropagation()
         onPrevious()
-      }} aria-label='Previous image' className='absolute left-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:left-8'>
+      }} aria-label='Previous image' data-lightbox-focusable className='absolute left-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:left-8'>
         <ArrowLeft size={20} aria-hidden='true' />
       </button>
 
@@ -46,7 +97,7 @@ const ImageLightbox = ({ item, onClose, onPrevious, onNext, ariaLabel = 'Image p
       <button type='button' onClick={e => {
         e.stopPropagation()
         onNext()
-      }} aria-label='Next image' className='absolute right-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:right-8'>
+      }} aria-label='Next image' data-lightbox-focusable className='absolute right-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:right-8'>
         <ArrowRight size={20} aria-hidden='true' />
       </button>
     </div>
