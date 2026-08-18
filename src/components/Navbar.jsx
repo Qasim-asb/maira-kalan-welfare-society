@@ -105,7 +105,7 @@ const Navbar = () => {
               {navLinks.map(item => (
                 item.children ? (
                   <div key={item.label} onMouseEnter={() => setTeamOpen(true)} onMouseLeave={() => setTeamOpen(false)} className='relative'>
-                    <button type='button' onClick={() => setTeamOpen(current => !current)} aria-expanded={teamOpen} className={`flex items-center gap-1 whitespace-nowrap text-sm font-medium transition ${['team', 'general-body', 'founder-members', 'former-members'].includes(activeSection) ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
+                    <button type='button' onClick={() => setTeamOpen(current => !current)} aria-expanded={teamOpen} aria-haspopup='menu' className={`flex items-center gap-1 whitespace-nowrap text-sm font-medium transition ${['team', 'general-body', 'founder-members', 'former-members'].includes(activeSection) ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
                       Team
                       <ChevronDown size={15} className={`transition-transform ${teamOpen ? 'rotate-180' : ''}`} />
                     </button>
@@ -145,7 +145,7 @@ const Navbar = () => {
                 {navLinks.map(item => (
                   item.children ? (
                     <div key={item.label}>
-                      <button type='button' onClick={() => setTeamOpen(current => !current)} aria-expanded={teamOpen} className={`flex w-full items-center justify-between rounded-xl px-3 py-3 text-sm font-medium transition ${['team', 'general-body', 'founder-members', 'former-members'].includes(activeSection) ? 'bg-white/10 text-[#b7e36b]' : 'text-white/75 hover:bg-white/10 hover:text-white'}`}>
+                      <button type='button' onClick={() => setTeamOpen(current => !current)} aria-expanded={teamOpen} aria-haspopup='menu' className={`flex w-full items-center justify-between rounded-xl px-3 py-3 text-sm font-medium transition ${['team', 'general-body', 'founder-members', 'former-members'].includes(activeSection) ? 'bg-white/10 text-[#b7e36b]' : 'text-white/75 hover:bg-white/10 hover:text-white'}`}>
                         <span>Team</span>
                         <ChevronDown size={17} className={`transition-transform ${teamOpen ? 'rotate-180' : ''}`} />
                       </button>
