@@ -5,7 +5,16 @@ export const navLinks = [
   { label: 'Introduction', href: '#introduction' },
   { label: 'Programs', href: '#programs' },
   { label: 'Funds', href: '#funds' },
-  { label: 'Team', href: '#team' },
+  {
+    label: 'Team',
+    href: '#team',
+    children: [
+      { label: 'Executive Team', href: '#team' },
+      { label: 'General Body', href: '#general-body' },
+      { label: 'Founder Members', href: '#founder-members' },
+      { label: 'Former Members', href: '#former-members' }
+    ]
+  },
   { label: 'Projects', href: '#projects' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' }
