@@ -1,0 +1,56 @@
+import { useEffect } from 'react'
+import { ArrowLeft, ArrowRight, X } from 'lucide-react'
+
+const ImageLightbox = ({ item, onClose, onPrevious, onNext, ariaLabel = 'Image preview', subtitle }) => {
+  useEffect(() => {
+    if (!item) return
+
+    const handleKeyDown = e => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') onPrevious()
+      if (e.key === 'ArrowRight') onNext()
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = previousOverflow
+    }
+  }, [item, onClose, onPrevious, onNext])
+
+  if (!item) return null
+
+  return (
+    <div onClick={onClose} role='dialog' aria-modal='true' aria-label={ariaLabel} className='fixed inset-0 z-50 flex items-center justify-center bg-[#071b18]/95 p-5 backdrop-blur-sm sm:p-8'>
+      <button type='button' onClick={onClose} aria-label='Close photo' className='absolute right-5 top-5 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18]'>
+        <X size={21} aria-hidden='true' />
+      </button>
+      <button type='button' onClick={e => {
+        e.stopPropagation()
+        onPrevious()
+      }} aria-label='Previous image' className='absolute left-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:left-8'>
+        <ArrowLeft size={20} aria-hidden='true' />
+      </button>
+
+      <div onClick={e => e.stopPropagation()} className='relative flex max-h-[90vh] max-w-6xl flex-col items-center'>
+        <img src={item.image} alt={item.title || item.name} className='max-h-[75vh] max-w-full rounded-2xl object-contain shadow-2xl' />
+        <div className='mt-4 text-center'>
+          <p className='text-[10px] font-bold uppercase tracking-[0.18em] text-[#b7e36b]'>{subtitle}</p>
+          <h3 className='mt-1 text-lg font-bold text-white sm:text-xl'>{item.title || item.name}</h3>
+        </div>
+      </div>
+      <button type='button' onClick={e => {
+        e.stopPropagation()
+        onNext()
+      }} aria-label='Next image' className='absolute right-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:right-8'>
+        <ArrowRight size={20} aria-hidden='true' />
+      </button>
+    </div>
+  )
+}
+
+export default ImageLightbox

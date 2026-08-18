@@ -89,7 +89,7 @@ const Support = () => {
                   <div key={payment.name} className='rounded-2xl bg-white/30 p-4'>
                     <p className='text-xs font-extrabold uppercase tracking-[0.16em] text-[#071b18]/50'>{payment.name}</p>
                     <p className='mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl'>{payment.display}</p>
-                    <button type='button' onClick={() => copyNumber(payment.value, payment.name)} className='mt-3 flex items-center gap-2 rounded-xl bg-[#071b18] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#0d302b] active:scale-[0.98]'>
+                    <button type='button' onClick={() => copyNumber(payment.value, payment.name)} aria-label={copied === payment.name ? `${payment.name} number copied` : `Copy ${payment.name} number`} className='mt-3 flex items-center gap-2 rounded-xl bg-[#071b18] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#0d302b] active:scale-[0.98]'>
                       {copied === payment.name ? (
                         <>
                           <Check size={16} />

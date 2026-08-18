@@ -32,14 +32,14 @@ const Contact = () => {
               <div className='group h-full rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
-                    <Phone size={20} />
+                    <Phone size={20} aria-hidden='true' />
                   </div>
-                  <ArrowUpRight size={18} className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
+                  <ArrowUpRight size={18} aria-hidden='true' className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
                 </div>
                 <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Phone</p>
                 <div className='mt-2 space-y-1'>
                   {PHONE_NUMBERS.map(phone => (
-                    <a key={phone.link} href={`tel:${phone.link}`} className='block text-lg font-bold transition hover:text-emerald-700'>
+                    <a key={phone.link} href={`tel:${phone.link}`} aria-label={`Call ${phone.display}`} className='block text-lg font-bold transition hover:text-emerald-700'>
                       {phone.display}
                     </a>
                   ))}
@@ -51,9 +51,9 @@ const Contact = () => {
               <a href={`mailto:${EMAIL}`} className='group block h-full rounded-[2rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
-                    <Mail size={20} />
+                    <Mail size={20} aria-hidden='true' />
                   </div>
-                  <ArrowUpRight size={18} className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
+                  <ArrowUpRight size={18} aria-hidden='true' className='text-[#071b18]/25 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-emerald-700' />
                 </div>
                 <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Email</p>
                 <p className='mt-2 break-all text-base font-bold transition group-hover:text-emerald-700'>{EMAIL}</p>
@@ -64,7 +64,7 @@ const Contact = () => {
               <div className='group h-full rounded-[2rem] bg-[#071b18] p-6 text-white sm:col-span-2 sm:p-7'>
                 <div className='flex items-start justify-between'>
                   <div className='grid size-11 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
-                    <MapPin size={20} />
+                    <MapPin size={20} aria-hidden='true' />
                   </div>
                 </div>
                 <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-white/35'>Community</p>

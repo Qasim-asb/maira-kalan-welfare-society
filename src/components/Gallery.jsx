@@ -1,16 +1,21 @@
-import { useState } from 'react'
-import { ArrowLeft, ArrowRight, ArrowUpRight, Images, X } from 'lucide-react'
+import { useCallback, useState } from 'react'
+import { ArrowUpRight, Images } from 'lucide-react'
 import { galleryItems } from '../data/data'
 import Reveal from './Reveal'
+import ImageLightbox from './ImageLightbox'
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null)
 
   const selectedItem = selectedIndex !== null ? galleryItems[selectedIndex] : null
 
-  const showPrevious = () => { setSelectedIndex(current => current === 0 ? galleryItems.length - 1 : current - 1) }
+  const showPrevious = useCallback(() => {
+    setSelectedIndex(current => current === 0 ? galleryItems.length - 1 : current - 1)
+  }, [])
 
-  const showNext = () => { setSelectedIndex(current => current === galleryItems.length - 1 ? 0 : current + 1) }
+  const showNext = useCallback(() => {
+    setSelectedIndex(current => current === galleryItems.length - 1 ? 0 : current + 1)
+  }, [])
 
   return (
     <section id='gallery' className='bg-[#e9e2cf] px-5 py-20 text-[#071b18] sm:px-8 sm:py-24 lg:px-10 lg:py-28'>
@@ -70,37 +75,7 @@ const Gallery = () => {
         </Reveal>
       </div>
 
-      {selectedItem && (
-        <div className='fixed inset-0 z-50 flex items-center justify-center bg-[#071b18]/95 p-5 backdrop-blur-sm sm:p-8' role='dialog' aria-modal='true' aria-label={selectedItem.title} onClick={() => setSelectedIndex(null)}>
-          <button type='button' onClick={() => setSelectedIndex(null)} className='absolute right-5 top-5 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18]' aria-label='Close gallery'>
-            <X size={21} />
-          </button>
-          <button type='button'
-            onClick={event => {
-              event.stopPropagation()
-              showPrevious()
-            }}
-            className='absolute left-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:left-8' aria-label='Previous photo'>
-            <ArrowLeft size={20} />
-          </button>
-
-          <div className='relative flex max-h-[90vh] max-w-6xl flex-col items-center' onClick={event => event.stopPropagation()}>
-            <img src={selectedItem.image} alt={selectedItem.alt} className='max-h-[75vh] max-w-full rounded-2xl object-contain shadow-2xl' />
-            <div className='mt-4 text-center'>
-              <p className='text-[10px] font-bold uppercase tracking-[0.18em] text-[#b7e36b]'>{selectedItem.category}</p>
-              <h3 className='mt-1 text-lg font-bold text-white sm:text-xl'>{selectedItem.title}</h3>
-            </div>
-          </div>
-          <button type='button'
-            onClick={event => {
-              event.stopPropagation()
-              showNext()
-            }}
-            className='absolute right-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:right-8' aria-label='Next photo'>
-            <ArrowRight size={20} />
-          </button>
-        </div>
-      )}
+      {selectedItem && <ImageLightbox item={selectedItem} onClose={() => setSelectedIndex(null)} onPrevious={showPrevious} onNext={showNext} ariaLabel={selectedItem.title} subtitle={selectedItem.category} />}
     </section>
   )
 }

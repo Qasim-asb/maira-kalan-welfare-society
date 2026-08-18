@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import { ArrowLeft, ArrowRight, UsersRound, X } from 'lucide-react'
+import { useCallback, useState } from 'react'
+import { UsersRound } from 'lucide-react'
 import { generalBody } from '../data/data'
 import Reveal from './Reveal'
+import ImageLightbox from './ImageLightbox'
 
 const GeneralBody = () => {
   const [selectedIndex, setSelectedIndex] = useState(null)
 
   const selectedPerson = selectedIndex !== null ? generalBody[selectedIndex] : null
 
-  const showPrevious = () => {
+  const showPrevious = useCallback(() => {
     setSelectedIndex(current => current === 0 ? generalBody.length - 1 : current - 1)
-  }
+  }, [])
 
-  const showNext = () => {
+  const showNext = useCallback(() => {
     setSelectedIndex(current => current === generalBody.length - 1 ? 0 : current + 1)
-  }
+  }, [])
 
   return (
     <section id='general-body' className='bg-[#071b18] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10 lg:py-28'>
@@ -64,32 +65,7 @@ const GeneralBody = () => {
         </Reveal>
       </div>
 
-      {selectedPerson && (
-        <div onClick={() => setSelectedIndex(null)} role='dialog' aria-modal='true' aria-label={selectedPerson.name} className='fixed inset-0 z-50 flex items-center justify-center bg-[#071b18]/95 p-5 backdrop-blur-sm sm:p-8'>
-          <button type='button' onClick={() => setSelectedIndex(null)} aria-label='Close General Body photo' className='absolute right-5 top-5 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18]'>
-            <X size={21} />
-          </button>
-          <button type='button' onClick={event => {
-            event.stopPropagation()
-            showPrevious()
-          }} aria-label='Previous General Body member' className='absolute left-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:left-8'>
-            <ArrowLeft size={20} />
-          </button>
-          <div onClick={event => event.stopPropagation()} className='relative flex max-h-[90vh] max-w-6xl flex-col items-center'>
-            <img src={selectedPerson.image} alt={selectedPerson.name} className='max-h-[75vh] max-w-full rounded-2xl object-contain shadow-2xl' style={{ objectPosition: selectedPerson.position || 'center' }} />
-            <div className='mt-4 text-center'>
-              <p className='text-[10px] font-bold uppercase tracking-[0.18em] text-[#b7e36b]'>General Body Member</p>
-              <h3 className='mt-1 text-lg font-bold text-white sm:text-xl'>{selectedPerson.name}</h3>
-            </div>
-          </div>
-          <button type='button' onClick={event => {
-            event.stopPropagation()
-            showNext()
-          }} aria-label='Next General Body member' className='absolute right-4 z-20 grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-[#b7e36b] hover:text-[#071b18] sm:right-8'>
-            <ArrowRight size={20} />
-          </button>
-        </div>
-      )}
+      {selectedPerson && <ImageLightbox item={selectedPerson} onClose={() => setSelectedIndex(null)} onPrevious={showPrevious} onNext={showNext} ariaLabel={selectedPerson.name} subtitle='General Body Member' />}
     </section>
   )
 }
