@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, HeartHandshake, Menu, X } from 'lucide-react'
 import { navLinks } from '../data/data'
 
@@ -28,10 +28,49 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [teamOpen, setTeamOpen] = useState(false)
+  const teamMenuRef = useRef(null)
 
   const closeMenu = () => {
     setOpen(false)
     setTeamOpen(false)
+  }
+
+  const handleTeamKeyDown = e => {
+    const items = teamMenuRef.current?.querySelectorAll('a')
+
+    if (!items?.length) return
+
+    const currentIndex = [...items].indexOf(document.activeElement)
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+
+      if (!teamOpen) {
+        setTeamOpen(true)
+        requestAnimationFrame(() => items[0]?.focus())
+        return
+      }
+
+      items[(currentIndex + 1) % items.length]?.focus()
+    }
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault()
+
+      if (!teamOpen) {
+        setTeamOpen(true)
+        requestAnimationFrame(() => items[items.length - 1]?.focus())
+        return
+      }
+
+      items[(currentIndex - 1 + items.length) % items.length]?.focus()
+    }
+
+    if (e.key === 'Escape') {
+      e.preventDefault()
+      setTeamOpen(false)
+      document.activeElement?.blur()
+    }
   }
 
   useEffect(() => {
@@ -104,7 +143,11 @@ const Navbar = () => {
             <div className='hidden items-center gap-5 lg:flex xl:gap-7'>
               {navLinks.map(item => (
                 item.children ? (
-                  <div key={item.label} onMouseEnter={() => setTeamOpen(true)} onMouseLeave={() => setTeamOpen(false)} className='relative'>
+                  <div key={item.label} onMouseEnter={() => setTeamOpen(true)} onMouseLeave={() => setTeamOpen(false)} onFocus={() => setTeamOpen(true)} onBlur={e => {
+                    if (!e.currentTarget.contains(e.relatedTarget)) {
+                      setTeamOpen(false)
+                    }
+                  }} onKeyDown={handleTeamKeyDown} className='relative'>
                     <button type='button' onClick={() => setTeamOpen(current => !current)} aria-expanded={teamOpen} aria-haspopup='menu' className={`flex items-center gap-1 whitespace-nowrap text-sm font-medium transition ${['team', 'general-body', 'founder-members', 'former-members'].includes(activeSection) ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
                       Team
                       <ChevronDown size={15} className={`transition-transform ${teamOpen ? 'rotate-180' : ''}`} />
@@ -112,9 +155,9 @@ const Navbar = () => {
 
                     {teamOpen && (
                       <div className='absolute left-1/2 top-full z-50 w-52 -translate-x-1/2 pt-3'>
-                        <div className='overflow-hidden rounded-2xl border border-white/10 bg-[#071b18]/95 p-2 shadow-2xl backdrop-blur-xl space-y-1.5'>
+                        <div ref={teamMenuRef} role='menu' className='overflow-hidden rounded-2xl border border-white/10 bg-[#071b18]/95 p-2 shadow-2xl backdrop-blur-xl space-y-1.5'>
                           {item.children.map(child => (
-                            <a key={child.label} href={child.href} onClick={() => setTeamOpen(false)} className={`block rounded-xl px-3 py-2.5 text-sm transition ${activeSection === child.href.replace('#', '') ? 'bg-white/10 text-[#b7e36b]' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}>
+                            <a key={child.label} href={child.href} onClick={() => setTeamOpen(false)} role='menuitem' className={`block rounded-xl px-3 py-2.5 text-sm transition ${activeSection === child.href.replace('#', '') ? 'bg-white/10 text-[#b7e36b]' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}>
                               {child.label}
                             </a>
                           ))}
