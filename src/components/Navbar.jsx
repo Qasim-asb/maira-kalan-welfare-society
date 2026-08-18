@@ -143,12 +143,12 @@ const Navbar = () => {
             <div className='hidden items-center gap-5 lg:flex xl:gap-7'>
               {navLinks.map(item => (
                 item.children ? (
-                  <div key={item.label} onMouseEnter={() => setTeamOpen(true)} onMouseLeave={() => setTeamOpen(false)} onFocus={() => setTeamOpen(true)} onBlur={e => {
+                  <div key={item.label} onMouseEnter={() => setTeamOpen(true)} onMouseLeave={() => setTeamOpen(false)} onBlur={e => {
                     if (!e.currentTarget.contains(e.relatedTarget)) {
                       setTeamOpen(false)
                     }
                   }} onKeyDown={handleTeamKeyDown} className='relative'>
-                    <button type='button' onClick={() => setTeamOpen(current => !current)} aria-expanded={teamOpen} aria-haspopup='menu' className={`flex items-center gap-1 whitespace-nowrap text-sm font-medium transition ${['team', 'general-body', 'founder-members', 'former-members'].includes(activeSection) ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
+                    <button type='button' onClick={() => setTeamOpen(current => !current)} onFocus={() => setTeamOpen(true)} aria-expanded={teamOpen} aria-haspopup='menu' className={`flex items-center gap-1 whitespace-nowrap text-sm font-medium transition ${['team', 'general-body', 'founder-members', 'former-members'].includes(activeSection) ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
                       Team
                       <ChevronDown size={15} className={`transition-transform ${teamOpen ? 'rotate-180' : ''}`} />
                     </button>
