@@ -190,7 +190,7 @@ export const generalBody = [
   },
   {
     image: `${import.meta.env.BASE_URL}general-body/mr-dr-naeem.jpeg`,
-    name: 'Mr. Dr.Naeem'
+    name: 'Dr. Naeem Ahmad'
   },
   {
     image: `${import.meta.env.BASE_URL}general-body/mr-yasir-rehan.jpeg`,
@@ -229,7 +229,7 @@ export const founderMembers = [
   },
   {
     image: `${import.meta.env.BASE_URL}founder-members/mr-m-haroon-qasim-shah.jpeg`,
-    name: 'Mr. M.Haroon [Qasim Shah]',
+    name: 'Mr. M.Haroon (Qasim Shah)',
     role: 'Founder Member',
     position: 'center 10%'
   },
@@ -410,6 +410,11 @@ export const formerMembers = [
   {
     image: `${import.meta.env.BASE_URL}former-members/danish-shamraiz.jpeg`,
     name: 'Mr. Danish Shamraiz',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/malik-iqraz-awan.jpeg`,
+    name: 'Mr. Malik Iqraz Awan',
     role: 'Ex. SC Member'
   }
 ]
