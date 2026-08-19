@@ -1,9 +1,21 @@
-import { ArrowUpRight, CircleDollarSign, WalletCards } from 'lucide-react'
-import { expenditureDetails, fundDetails } from '../data/data'
+import { useCallback, useState } from 'react'
+import { ArrowUpRight, Banknote, WalletCards } from 'lucide-react'
+import { expenditureImages, fundDetails } from '../data/data'
 import Counter from './Counter'
 import Reveal from './Reveal'
+import ImageLightbox from './ImageLightbox'
 
 const Funds = () => {
+  const [selectedExpenditure, setSelectedExpenditure] = useState(null)
+
+  const showPreviousExpenditure = useCallback(() => {
+    setSelectedExpenditure(current => current === 0 ? expenditureImages.length - 1 : current - 1)
+  }, [])
+
+  const showNextExpenditure = useCallback(() => {
+    setSelectedExpenditure(current => current === expenditureImages.length - 1 ? 0 : current + 1)
+  }, [])
+
   return (
     <section id='funds' className='bg-[#f4f7f5] px-5 py-20 text-[#071b18] sm:px-8 sm:py-24 lg:px-10 lg:py-28'>
       <div className='mx-auto max-w-7xl'>
@@ -17,19 +29,20 @@ const Funds = () => {
           </Reveal>
           <Reveal delay={0.1}>
             <p className='max-w-2xl text-base leading-7 text-[#071b18]/55 sm:text-lg sm:leading-8'>
-              A summary of the society's recorded funds and expenditures during
-              its initial months of welfare activities.
+              A summary of the society's recorded funds and expenditures from
+              September 2022 to July 2026.
             </p>
           </Reveal>
         </div>
 
-        <div className='mt-12 grid gap-4 sm:grid-cols-3 lg:mt-16'>
+        <div className='mt-12 grid gap-4 lg:grid-cols-3 lg:mt-16'>
           <Reveal>
             <div className='h-full rounded-[2rem] bg-[#071b18] p-7 text-white sm:p-8'>
-              <CircleDollarSign size={25} className='text-[#b7e36b]' />
+              <Banknote size={25} className='text-[#b7e36b]' />
               <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-white/35'>Total Funds</p>
-              <p className='mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl'>
-                <Counter value={382850} prefix='Rs. ' />
+              <p className='mt-2 text-xs font-semibold text-[#b7e36b]/70'>September 2022 — July 2026</p>
+              <p className='mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl'>
+                <Counter value={15932419} suffix='PKR' />
               </p>
             </div>
           </Reveal>
@@ -37,16 +50,18 @@ const Funds = () => {
             <div className='h-full rounded-[2rem] border border-[#071b18]/10 bg-white p-7 sm:p-8'>
               <WalletCards size={25} className='text-emerald-700' />
               <p className='mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/35'>Total Expenditures</p>
-              <p className='mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl'>
-                <Counter value={273850} prefix='Rs. ' />
+              <p className='mt-2 text-xs font-semibold text-[#1b765d]/70'>September 2022 — July 2026</p>
+              <p className='mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl'>
+                <Counter value={15300795} suffix='PKR' />
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.16}>
             <div className='h-full rounded-[2rem] border border-[#071b18]/10 bg-[#dfead8] p-7 sm:p-8'>
               <p className='text-xs font-bold uppercase tracking-[0.18em] text-[#071b18]/45'>Closing Balance</p>
-              <p className='mt-8 text-3xl font-extrabold tracking-tight sm:text-4xl'>
-                <Counter value={109000} prefix='Rs. ' />
+              <p className='mt-2 text-xs font-semibold text-[#1b765d]/70'>September 2022 — July 2026</p>
+              <p className='mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl'>
+                <Counter value={631624} suffix='PKR' />
               </p>
               <p className='mt-3 text-sm leading-6 text-[#071b18]/50'>Remaining balance after the recorded expenditures.</p>
             </div>
@@ -62,7 +77,7 @@ const Funds = () => {
                   <h3 className='mt-2 text-2xl font-extrabold tracking-tight'>Monthly record</h3>
                 </div>
                 <div className='grid size-10 place-items-center rounded-xl bg-[#071b18] text-[#b7e36b]'>
-                  <CircleDollarSign size={19} />
+                  <Banknote size={19} />
                 </div>
               </div>
               <div className='mt-7 divide-y divide-[#071b18]/10'>
@@ -92,19 +107,13 @@ const Funds = () => {
                   <ArrowUpRight size={19} />
                 </div>
               </div>
-              <div className='mt-7 divide-y divide-white/10'>
-                {expenditureDetails.map((item, i) => (
-                  <div key={i} className='flex items-center justify-between gap-5 py-4 first:pt-0 last:pb-0'>
-                    <span className='max-w-[65%] text-sm leading-6 text-white/55'>{item.title}</span>
-                    <span className='shrink-0 text-sm font-bold'>{item.amount}</span>
-                  </div>
+              <div className='mt-7 grid grid-cols-3 gap-3 sm:grid-cols-4'>
+                {expenditureImages.map((image, i) => (
+                  <button key={i} type='button' onClick={() => setSelectedExpenditure(i)} aria-label={`View expenditure photo ${i + 1}`} className='group relative overflow-hidden rounded-2xl'>
+                    <img src={image} alt={`Expenditure activity ${i + 1}`} loading={i < 3 ? 'eager' : 'lazy'} className='h-24 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-28' />
+                    <div className='absolute inset-0 bg-[#071b18]/0 transition group-hover:bg-[#071b18]/20' />
+                  </button>
                 ))}
-              </div>
-              <div className='mt-6 flex items-center justify-between border-t border-white/10 pt-5'>
-                <span className='text-sm font-bold text-white/60'>Total Expenditures</span>
-                <span className='text-lg font-extrabold'>
-                  <Counter value={273850} prefix='Rs. ' />
-                </span>
               </div>
             </div>
           </Reveal>
@@ -121,6 +130,22 @@ const Funds = () => {
           </div>
         </Reveal>
       </div>
+
+      {selectedExpenditure !== null && (
+        <ImageLightbox
+          item={{
+            image: expenditureImages[selectedExpenditure],
+            title: `Expenditure Photo ${selectedExpenditure + 1}`,
+            category: 'Expenditure',
+            alt: `Expenditure activity ${selectedExpenditure + 1}`
+          }}
+          onClose={() => setSelectedExpenditure(null)}
+          onPrevious={showPreviousExpenditure}
+          onNext={showNextExpenditure}
+          ariaLabel={`Expenditure photo ${selectedExpenditure + 1}`}
+          subtitle='Expenditure'
+        />
+      )}
     </section>
   )
 }

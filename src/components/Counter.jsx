@@ -36,7 +36,7 @@ const Counter = ({ value, duration = 1600, prefix = '', suffix = '', separator =
     <>
       {prefix}
       {formattedValue}
-      {suffix}
+      {suffix && <span className='ml-2 text-[0.65em] font-bold opacity-60'>{suffix}</span>}
     </>
   )
 }

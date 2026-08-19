@@ -425,11 +425,20 @@ export const fundDetails = [
   { month: 'November', amount: 'Rs. 154,050' }
 ]
 
-export const expenditureDetails = [
-  { title: 'September Sponsorship Program', amount: 'Rs. 60,000' },
-  { title: 'October Sponsorship Program', amount: 'Rs. 78,000' },
-  { title: 'Sweaters Project', amount: 'Rs. 57,850' },
-  { title: 'November Sponsorship Program', amount: 'Rs. 78,000' }
+export const expenditureImages = [
+  `${import.meta.env.BASE_URL}expenditures/expenditure-01.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-02.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-03.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-04.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-05.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-06.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-07.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-08.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-09.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-10.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-11.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-12.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-13.jpeg`
 ]
 
 export const galleryItems = [
