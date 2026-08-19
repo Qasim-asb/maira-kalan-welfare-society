@@ -522,6 +522,180 @@ export const galleryItems = [
     title: 'Education in Action',
     category: 'Education',
     alt: 'Students participating in an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/sardar-news.jpeg`,
+    title: 'Acknowledgement from Society',
+    category: 'Appreciation',
+    alt: 'Society acknowledging the efforts of the organization'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-01.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-02.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-03.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-04.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-05.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-06.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-07.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-08.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-09.jpeg`,
+    title: 'School Bag Support',
+    category: 'Education',
+    alt: 'Students with school bags provided through an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-10.jpeg`,
+    title: 'School Bag Support',
+    category: 'Education',
+    alt: 'Students with school bags provided through an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-11.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-12.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-13.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-14.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-15.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-16.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-17.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-18.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-19.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-20.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-21.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-22.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/welfare-support-01.jpeg`,
+    title: 'Appeal for Donation',
+    category: 'Support',
+    alt: 'Appeal for the donation to support needy'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/welfare-support-02.jpeg`,
+    title: 'Donation for Welfare',
+    category: 'Donation',
+    alt: 'Collecting donation for the organization'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-01.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-02.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-03.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-04.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
   }
 ]
 
