@@ -75,39 +75,42 @@ const Navbar = () => {
 
   useEffect(() => {
     const sections = [
-      'home',
-      ...navLinks.filter(item => item.href.startsWith('#')).map(item => item.href.slice(1)),
+      'introduction',
+      'programs',
+      'funds',
+      'team',
       'general-body',
       'founder-members',
       'former-members',
-      'support'
+      'projects',
+      'gallery',
+      'support',
+      'contact'
     ]
 
-    const observer = new IntersectionObserver(
-      entries => {
-        const visibleSection = entries
-          .filter(entry => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150
 
-        if (visibleSection) {
-          setActiveSection(visibleSection.target.id)
+      let currentSection = 'home'
+
+      for (const id of sections) {
+        const section = document.getElementById(id)
+
+        if (section && section.offsetTop <= scrollPosition) {
+          currentSection = id
         }
-      },
-      {
-        rootMargin: '-20% 0px -65% 0px',
-        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
       }
-    )
 
-    sections.forEach(id => {
-      const section = document.getElementById(id)
+      setActiveSection(currentSection)
+    }
 
-      if (section) {
-        observer.observe(section)
-      }
-    })
+    handleScroll()
 
-    return () => observer.disconnect()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   useEffect(() => {
@@ -166,7 +169,7 @@ const Navbar = () => {
                     )}
                   </div>
                 ) : (
-                  <a key={item.label} href={item.href} onClick={item.label === 'Home' ? goHome : undefined} className={`whitespace-nowrap text-sm font-medium transition ${activeSection === item.href.replace('#', '') ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
+                  <a key={item.label} href={item.href} onClick={item.label === 'Home' ? goHome : undefined} className={`whitespace-nowrap text-sm font-medium transition ${activeSection === (item.label === 'Home' ? 'home' : item.href.replace('#', '')) ? 'text-[#b7e36b]' : 'text-white/65 hover:text-white'}`}>
                     {item.label}
                   </a>
                 )

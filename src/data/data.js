@@ -9,7 +9,7 @@ export const navLinks = [
     label: 'Team',
     href: '#team',
     children: [
-      { label: 'Executive Team', href: '#team' },
+      { label: 'Leadership', href: '#team' },
       { label: 'General Body', href: '#general-body' },
       { label: 'Founder Members', href: '#founder-members' },
       { label: 'Former Members', href: '#former-members' }
