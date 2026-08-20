@@ -128,9 +128,7 @@ const Funds = () => {
         <Reveal delay={0.1}>
           <div className='mt-8 border-l-2 border-emerald-700/30 pl-5'>
             <p className='max-w-3xl text-sm leading-7 text-[#071b18]/50 sm:text-base'>
-              These figures represent the society's recorded financial activity from
-              2022 through 2026. The records are presented for transparency and may
-              be updated as new financial information becomes available.
+              These figures represent the society's recorded financial activity from 2022 through 2026. The records are presented for transparency and provide an overview of the society's financial activities during this period.
             </p>
           </div>
         </Reveal>
