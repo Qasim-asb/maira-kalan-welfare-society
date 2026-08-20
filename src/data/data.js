@@ -74,11 +74,12 @@ export const team = [
   {
     image: `${import.meta.env.BASE_URL}team/saad-ilyas.jpeg`,
     name: 'Mr. Saad Ilyas',
-    role: 'Honorary Member'
+    role: 'Honorary Member',
+    position: 'center 28%'
   },
   {
     image: `${import.meta.env.BASE_URL}team/izzaz-safeer.jpeg`,
-    name: 'Mr. Sardar Izzaz Safeer',
+    name: 'Mr. Sardar Aizaz Safeer',
     role: 'Honorary Member'
   }
 ]
@@ -475,6 +476,12 @@ export const galleryItems = [
     alt: 'Students and community members during a recognition activity'
   },
   {
+    image: `${import.meta.env.BASE_URL}gallery/student-recognition-03.jpeg`,
+    title: 'Recognizing Students',
+    category: 'Education',
+    alt: 'Students and community members during a recognition activity'
+  },
+  {
     image: `${import.meta.env.BASE_URL}gallery/student-recognition-02.jpeg`,
     title: 'Student Recognition',
     category: 'Education',
@@ -541,6 +548,36 @@ export const galleryItems = [
     alt: 'Society acknowledging the efforts of the organization'
   },
   {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-09.jpeg`,
+    title: 'School Bag Support',
+    category: 'Education',
+    alt: 'Students with school bags provided through an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/welfare-support-01.jpeg`,
+    title: 'Appeal for Donation',
+    category: 'Support',
+    alt: 'Appeal for the donation to support needy'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/welfare-support-02.jpeg`,
+    title: 'Donation for Welfare',
+    category: 'Donation',
+    alt: 'Collecting donation for the organization'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/water-supply-01.jpeg`,
+    title: 'Donation for Clean Water',
+    category: 'WaterSupply',
+    alt: 'Donating water pipes for community'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/water-supply-02.jpeg`,
+    title: 'Donation for Clean Water',
+    category: 'WaterSupply',
+    alt: 'Donating water pipes for community'
+  },
+  {
     image: `${import.meta.env.BASE_URL}gallery/azadi-01.jpeg`,
     title: 'Independence Day Celebrations',
     category: 'Function',
@@ -554,6 +591,12 @@ export const galleryItems = [
   },
   {
     image: `${import.meta.env.BASE_URL}gallery/azadi-03.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-10.jpeg`,
     title: 'Independence Day Celebrations',
     category: 'Function',
     alt: 'Independence day celebrations in school'
@@ -587,12 +630,6 @@ export const galleryItems = [
     title: 'Independence Day Celebrations',
     category: 'Function',
     alt: 'Independence day celebrations in school'
-  },
-  {
-    image: `${import.meta.env.BASE_URL}gallery/azadi-09.jpeg`,
-    title: 'School Bag Support',
-    category: 'Education',
-    alt: 'Students with school bags provided through an education support activity'
   },
   {
     image: `${import.meta.env.BASE_URL}gallery/azadi-11.jpeg`,
@@ -667,18 +704,6 @@ export const galleryItems = [
     alt: 'Independence day celebrations in school'
   },
   {
-    image: `${import.meta.env.BASE_URL}gallery/welfare-support-01.jpeg`,
-    title: 'Appeal for Donation',
-    category: 'Support',
-    alt: 'Appeal for the donation to support needy'
-  },
-  {
-    image: `${import.meta.env.BASE_URL}gallery/welfare-support-02.jpeg`,
-    title: 'Donation for Welfare',
-    category: 'Donation',
-    alt: 'Collecting donation for the organization'
-  },
-  {
     image: `${import.meta.env.BASE_URL}gallery/comunity-01.jpeg`,
     title: 'Community Gathering',
     category: 'Community',
@@ -701,6 +726,12 @@ export const galleryItems = [
     title: 'Community Gathering',
     category: 'Community',
     alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-05.jpeg`,
+    title: 'Cabinet Members MKWS',
+    category: 'Cabinet',
+    alt: 'Cabinet members gathered together during a society activity'
   }
 ]
 
