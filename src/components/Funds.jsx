@@ -74,24 +74,30 @@ const Funds = () => {
               <div className='flex items-center justify-between gap-4'>
                 <div>
                   <p className='text-xs font-bold uppercase tracking-[0.18em] text-emerald-700'>Funds Collected</p>
-                  <h3 className='mt-2 text-2xl font-extrabold tracking-tight'>Monthly record</h3>
+                  <h3 className='mt-2 text-2xl font-extrabold tracking-tight'>Yearly record</h3>
                 </div>
                 <div className='grid size-10 place-items-center rounded-xl bg-[#071b18] text-[#b7e36b]'>
                   <Banknote size={19} />
                 </div>
               </div>
-              <div className='mt-7 divide-y divide-[#071b18]/10'>
-                {fundDetails.map((item, i) => (
-                  <div key={i} className='flex items-center justify-between gap-4 py-4 first:pt-0 last:pb-0'>
-                    <span className='text-sm font-semibold text-[#071b18]/55'>{item.month}</span>
-                    <span className='text-sm font-bold'>{item.amount}</span>
+              <div className='mt-7 space-y-3'>
+                {fundDetails.map(item => (
+                  <div key={item.year} className='flex flex-col gap-3 rounded-2xl bg-[#f4f7f5] px-4 py-3.5 sm:flex-row sm:items-center sm:gap-4'>
+                    <div className='flex min-w-0 items-center gap-3'>
+                      <div className='grid size-11 shrink-0 place-items-center rounded-xl bg-[#071b18] text-sm font-extrabold text-[#b7e36b]'>{item.year}</div>
+                      <div className='min-w-0'>
+                        <p className='text-sm font-bold'>{item.year} Financial Record</p>
+                        <p className='mt-0.5 text-xs text-[#071b18]/40'>Funds collected during {item.year}</p>
+                      </div>
+                    </div>
+                    <span className='border-t border-[#071b18]/10 pt-3 text-sm font-extrabold sm:ml-auto sm:border-0 sm:pt-0'>{item.amount}</span>
                   </div>
                 ))}
               </div>
               <div className='mt-6 flex items-center justify-between border-t border-[#071b18]/10 pt-5'>
                 <span className='text-sm font-bold'>Total Funds</span>
                 <span className='text-lg font-extrabold'>
-                  <Counter value={382850} prefix='Rs. ' />
+                  <Counter value={15932419} prefix='Rs. ' />
                 </span>
               </div>
             </div>
@@ -122,10 +128,9 @@ const Funds = () => {
         <Reveal delay={0.1}>
           <div className='mt-8 border-l-2 border-emerald-700/30 pl-5'>
             <p className='max-w-3xl text-sm leading-7 text-[#071b18]/50 sm:text-base'>
-              These figures reflect the financial details provided for the
-              society's initial recorded activities. The Funds section is
-              currently included for transparency and may be revised as the
-              website develops.
+              These figures represent the society's recorded financial activity from
+              2022 through 2026. The records are presented for transparency and may
+              be updated as new financial information becomes available.
             </p>
           </div>
         </Reveal>

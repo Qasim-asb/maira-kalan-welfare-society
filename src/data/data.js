@@ -420,12 +420,15 @@ export const formerMembers = [
 ]
 
 export const fundDetails = [
-  { month: 'September', amount: 'Rs. 69,360' },
-  { month: 'October', amount: 'Rs. 159,440' },
-  { month: 'November', amount: 'Rs. 154,050' }
+  { year: '2022', amount: 'Rs. 611,850' },
+  { year: '2023', amount: 'Rs. 2,438,450' },
+  { year: '2024', amount: 'Rs. 4,550,219' },
+  { year: '2025', amount: 'Rs. 4,574,452' },
+  { year: '2026', amount: 'Rs. 3,757,448' }
 ]
 
 export const expenditureImages = [
+  `${import.meta.env.BASE_URL}expenditures/expenditure-13.jpeg`,
   `${import.meta.env.BASE_URL}expenditures/expenditure-01.jpeg`,
   `${import.meta.env.BASE_URL}expenditures/expenditure-02.jpeg`,
   `${import.meta.env.BASE_URL}expenditures/expenditure-03.jpeg`,
@@ -437,8 +440,7 @@ export const expenditureImages = [
   `${import.meta.env.BASE_URL}expenditures/expenditure-09.jpeg`,
   `${import.meta.env.BASE_URL}expenditures/expenditure-10.jpeg`,
   `${import.meta.env.BASE_URL}expenditures/expenditure-11.jpeg`,
-  `${import.meta.env.BASE_URL}expenditures/expenditure-12.jpeg`,
-  `${import.meta.env.BASE_URL}expenditures/expenditure-13.jpeg`
+  `${import.meta.env.BASE_URL}expenditures/expenditure-12.jpeg`
 ]
 
 export const galleryItems = [
@@ -588,12 +590,6 @@ export const galleryItems = [
   },
   {
     image: `${import.meta.env.BASE_URL}gallery/azadi-09.jpeg`,
-    title: 'School Bag Support',
-    category: 'Education',
-    alt: 'Students with school bags provided through an education support activity'
-  },
-  {
-    image: `${import.meta.env.BASE_URL}gallery/azadi-10.jpeg`,
     title: 'School Bag Support',
     category: 'Education',
     alt: 'Students with school bags provided through an education support activity'
