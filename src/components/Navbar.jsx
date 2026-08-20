@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ChevronDown, HeartHandshake, Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import { navLinks } from '../data/data'
 
 const goHome = (e) => {
@@ -11,9 +11,7 @@ const goHome = (e) => {
 const Logo = () => {
   return (
     <a href={import.meta.env.BASE_URL} onClick={goHome} className='flex min-w-0 shrink-0 items-center gap-3' aria-label='Maira Kalan Welfare Society - Home'>
-      <div className='grid size-11 shrink-0 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18] shadow-[0_10px_30px_rgba(183,227,107,.2)]'>
-        <HeartHandshake size={23} strokeWidth={2.4} />
-      </div>
+      <img src={`${import.meta.env.BASE_URL}logo.jpeg`} alt='Maira Kalan Welfare Society logo' className='size-12 shrink-0 rounded-full object-cover' />
       <div className='min-w-0 leading-none'>
         <div className='truncate text-[15px] font-extrabold tracking-tight sm:text-base'>Maira Kalan</div>
         <div className='mt-1 truncate text-[9px] font-semibold uppercase tracking-[0.18em] text-white/45 sm:text-[10px] sm:tracking-[0.22em]'>

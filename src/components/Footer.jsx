@@ -1,4 +1,4 @@
-import { ArrowUp, HeartHandshake } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -11,9 +11,7 @@ const Footer = () => {
         <div className='grid gap-10 border-b border-white/10 pb-10 md:grid-cols-[1.2fr_0.8fr] md:items-start'>
           <div>
             <div className='flex items-center gap-3'>
-              <div className='grid size-11 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
-                <HeartHandshake size={21} />
-              </div>
+              <img src={`${import.meta.env.BASE_URL}logo.jpeg`} alt='Maira Kalan Welfare Society logo' className='size-18 rounded-full object-cover' />
               <div>
                 <p className='text-sm font-extrabold tracking-tight'>
                   Maira Kalan Welfare Society <span className='text-xs'>®</span>
