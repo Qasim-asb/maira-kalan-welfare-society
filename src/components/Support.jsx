@@ -48,14 +48,16 @@ const Support = () => {
       <div className='pointer-events-none absolute -left-40 bottom-0 size-80 rounded-full bg-[#b7e36b]/5 blur-3xl' />
 
       <div className='relative mx-auto max-w-7xl'>
+        <Reveal>
+          <p className='mb-8 sm:mb-10 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>10 · Support</p>
+        </Reveal>
         <div className='grid gap-6 lg:grid-cols-[1fr_0.8fr] lg:gap-8'>
           <Reveal>
             <div className='rounded-[2rem] border border-white/10 bg-white/[0.035] p-7 sm:p-10 lg:p-12'>
               <div className='grid size-12 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
                 <HeartHandshake size={23} />
               </div>
-              <p className='mt-8 text-xs font-bold uppercase tracking-[0.22em] text-[#b7e36b]'>08 · Support</p>
-              <h2 className='mt-3 max-w-2xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
+              <h2 className='mt-8 max-w-2xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
                 Help us continue
                 <span className='text-[#b7e36b]'>
                   {' '}
@@ -64,8 +66,7 @@ const Support = () => {
               </h2>
               <p className='mt-6 max-w-xl text-base leading-7 text-white/50 sm:text-lg sm:leading-8'>
                 Those who wish to support the welfare activities of Maira Kalan
-                Welfare Society can contribute through the EasyPaisa account
-                below.
+                Welfare Society can contribute through the EasyPaisa or JazzCash account.
               </p>
               <p className='mt-5 max-w-xl text-sm leading-6 text-white/30'>
                 Every contribution can help support education, welfare,
@@ -74,7 +75,7 @@ const Support = () => {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.12}>
             <div className='flex h-full flex-col rounded-[2rem] bg-[#b7e36b] p-7 text-[#071b18] sm:p-10'>
               <div className='flex items-center justify-between gap-4'>
                 <div className='grid size-11 place-items-center rounded-2xl bg-[#071b18] text-[#b7e36b]'>
@@ -88,7 +89,7 @@ const Support = () => {
                   <div key={payment.name} className='rounded-2xl bg-white/30 p-4'>
                     <p className='text-xs font-extrabold uppercase tracking-[0.16em] text-[#071b18]/50'>{payment.name}</p>
                     <p className='mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl'>{payment.display}</p>
-                    <button type='button' onClick={() => copyNumber(payment.value, payment.name)} className='mt-3 flex items-center gap-2 rounded-xl bg-[#071b18] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#0d302b] active:scale-[0.98]'>
+                    <button type='button' onClick={() => copyNumber(payment.value, payment.name)} aria-label={copied === payment.name ? `${payment.name} number copied` : `Copy ${payment.name} number`} className='mt-3 flex items-center gap-2 rounded-xl bg-[#071b18] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#0d302b] active:scale-[0.98]'>
                       {copied === payment.name ? (
                         <>
                           <Check size={16} />
@@ -108,7 +109,7 @@ const Support = () => {
           </Reveal>
         </div>
 
-        <Reveal delay={0.1}>
+        <Reveal delay={0.2}>
           <p className='mt-6 text-center text-xs leading-5 text-white/25'>
             Please verify the account details before making any contribution.
           </p>

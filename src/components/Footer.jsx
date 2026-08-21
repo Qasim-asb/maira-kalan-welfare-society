@@ -1,8 +1,8 @@
-import { ArrowUp, HeartHandshake } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth', })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -11,9 +11,7 @@ const Footer = () => {
         <div className='grid gap-10 border-b border-white/10 pb-10 md:grid-cols-[1.2fr_0.8fr] md:items-start'>
           <div>
             <div className='flex items-center gap-3'>
-              <div className='grid size-11 place-items-center rounded-2xl bg-[#b7e36b] text-[#071b18]'>
-                <HeartHandshake size={21} />
-              </div>
+              <img src={`${import.meta.env.BASE_URL}logo.jpeg`} alt='Maira Kalan Welfare Society logo' className='size-18 rounded-full object-cover' />
               <div>
                 <p className='text-sm font-extrabold tracking-tight'>
                   Maira Kalan Welfare Society <span className='text-xs'>®</span>
@@ -30,7 +28,7 @@ const Footer = () => {
           <div className='md:justify-self-end'>
             <p className='text-xs font-bold uppercase tracking-[0.2em] text-[#b7e36b]'>Explore</p>
             <nav className='mt-4 grid grid-cols-2 gap-x-10 gap-y-3 sm:grid-cols-3 md:grid-cols-2'>
-              <a href='#home' className='text-sm text-white/45 transition hover:text-white'>Home</a>
+              <a href={import.meta.env.BASE_URL} className='text-sm text-white/45 transition hover:text-white'>Home</a>
               <a href='#introduction' className='text-sm text-white/45 transition hover:text-white'>Introduction</a>
               <a href='#programs' className='text-sm text-white/45 transition hover:text-white'>Programs</a>
               <a href='#funds' className='text-sm text-white/45 transition hover:text-white'>Funds</a>

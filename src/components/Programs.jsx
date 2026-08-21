@@ -8,7 +8,7 @@ const Programs = () => {
       <div className='mx-auto max-w-7xl'>
         <div className='grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-16'>
           <Reveal>
-            <p className='text-sm font-bold uppercase tracking-[0.25em] text-[#b7e36b]'>What We Do</p>
+            <p className='text-sm font-bold uppercase tracking-[0.25em] text-[#b7e36b]'>02 · What We Do</p>
             <h2 className='mt-3 max-w-lg text-4xl font-extrabold leading-[1] tracking-[-0.04em] sm:text-5xl lg:text-6xl'>
               Practical support.
               <span className='text-[#b7e36b]'> Real community.</span>

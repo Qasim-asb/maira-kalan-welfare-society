@@ -7,7 +7,7 @@ const Projects = () => {
     <section id='projects' className='bg-[#071b18] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10 lg:py-28'>
       <div className='mx-auto max-w-7xl'>
         <Reveal>
-          <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-[#b7e36b]'>06 · Community Work</p>
+          <p className='text-xs font-extrabold uppercase tracking-[0.22em] text-[#b7e36b]'>08 · Community Work</p>
           <div className='mt-4 flex flex-col justify-between gap-7 md:flex-row md:items-end'>
             <h2 className='max-w-3xl text-4xl font-extrabold leading-[0.98] tracking-[-0.04em] sm:text-6xl'>
               Turning collective effort
@@ -26,7 +26,7 @@ const Projects = () => {
             const Icon = project.icon
 
             return (
-              <Reveal key={i} delay={i * 0.06}>
+              <Reveal key={project.title} delay={i * 0.06}>
                 <article className='group relative min-h-[300px] h-full overflow-hidden rounded-[26px] border border-white/10 bg-white/[0.04] p-6 transition duration-300 hover:-translate-y-1.5 hover:bg-white/[0.065]'>
 
                   <div className='absolute -right-8 -top-8 size-32 rounded-full bg-[#b7e36b]/10 blur-2xl transition group-hover:bg-[#b7e36b]/20' />

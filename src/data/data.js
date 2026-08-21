@@ -1,41 +1,447 @@
 import { GraduationCap, HandHeart, UsersRound, HeartHandshake, Shirt, School } from 'lucide-react'
 
 export const navLinks = [
-  { label: 'Home', href: '/' },
+  { label: 'Home', href: import.meta.env.BASE_URL },
   { label: 'Introduction', href: '#introduction' },
   { label: 'Programs', href: '#programs' },
   { label: 'Funds', href: '#funds' },
-  { label: 'Team', href: '#team' },
+  {
+    label: 'Team',
+    href: '#team',
+    children: [
+      { label: 'Leadership', href: '#team' },
+      { label: 'General Body', href: '#general-body' },
+      { label: 'Founder Members', href: '#founder-members' },
+      { label: 'Former Members', href: '#former-members' }
+    ]
+  },
   { label: 'Projects', href: '#projects' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' }
 ]
 
 export const team = [
-  { image: `${import.meta.env.BASE_URL}team/aftab-umar.jpeg`, name: 'Sardar Aftab Umar', role: 'President' },
-  { image: `${import.meta.env.BASE_URL}team/zafar-iqbal.jpeg`, name: 'Mr. Zafar Iqbal', role: 'Vice President' },
-  { image: `${import.meta.env.BASE_URL}team/amjad-zareen.jpeg`, name: 'Mr. Amjad Zareen', role: 'General Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/sardar-arshad.jpeg`, name: 'Sardar Muhammad Arshad', role: 'Deputy General Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/imran-nabi.jpeg`, name: 'Mr. Sardar Imran Nabi', role: 'Finance Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/muhammad-arshad.jpeg`, name: 'Muhammad Arshad', role: 'Deputy Finance Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/farhan-gohar.jpeg`, name: 'Mr. Hafiz Farhan Gohar', role: 'Information Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/shehzad-rabbani.jpeg`, name: 'Mr. Shehzad Rabbani', role: 'Joint Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/sajjad-ahmad.jpeg`, name: 'Mr. Sajjad Ahmad', role: 'Office Secretary' },
-  { image: `${import.meta.env.BASE_URL}team/saad-ilyas.jpeg`, name: 'Mr. Saad Ilyas', role: 'Honorary Member' },
-  { image: `${import.meta.env.BASE_URL}team/izzaz-safeer.jpeg`, name: 'Mr. Sardar Izzaz Safeer', role: 'Honorary Member' }
+  {
+    image: `${import.meta.env.BASE_URL}team/aftab-umar.jpeg`,
+    name: 'Sardar Aftab Umar',
+    role: 'President'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/zafar-iqbal.jpeg`,
+    name: 'Mr. Zafar Iqbal',
+    role: 'Vice President',
+    position: 'center 40%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/amjad-zareen.jpeg`,
+    name: 'Mr. Amjad Zareen',
+    role: 'General Secretary',
+    position: 'center 35%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/sardar-arshad.jpeg`,
+    name: 'Sardar Muhammad Arshad',
+    role: 'Deputy General Secretary',
+    position: 'center 45%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/imran-nabi.jpeg`,
+    name: 'Mr. Sardar Imran Nabi',
+    role: 'Finance Secretary',
+    position: 'center 45%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/muhammad-arshad.jpeg`,
+    name: 'Muhammad Arshad',
+    role: 'Deputy Finance Secretary',
+    position: 'center 20%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/farhan-gohar.jpeg`,
+    name: 'Mr. Hafiz Farhan Gohar',
+    role: 'Information Secretary'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/shehzad-rabbani.jpeg`,
+    name: 'Mr. Shehzad Rabbani',
+    role: 'Joint Secretary'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/sajjad-ahmad.jpeg`,
+    name: 'Mr. Sajjad Ahmad',
+    role: 'Office Secretary'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/saad-ilyas.jpeg`,
+    name: 'Mr. Saad Ilyas',
+    role: 'Honorary Member',
+    position: 'center 28%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}team/izzaz-safeer.jpeg`,
+    name: 'Mr. Sardar Aizaz Safeer',
+    role: 'Honorary Member'
+  }
+]
+
+export const generalBody = [
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-mubasher-yousaf.jpeg`,
+    name: 'Mr. Mubasher Yousaf'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-haji-malik-riaz.jpeg`,
+    name: 'Mr. Haji Malik Riaz',
+    position: 'center 35%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-khan-ayaz-khan.jpeg`,
+    name: 'Mr. Khan Ayaz Khan',
+    position: 'center 20%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-sardar-azher-nabi.jpeg`,
+    name: 'Mr. Sardar Azher Nabi'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-talat-amin.jpeg`,
+    name: 'Mr. Talat Amin',
+    position: 'center 25%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-umer-pervez-karlal.jpeg`,
+    name: 'Mr. Umer Pervez Karlal'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-ehsan-ramzan.jpeg`,
+    name: 'Mr. Ehsan Ramzan'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-gulzeb-bobi.jpeg`,
+    name: 'Mr. Gulzeb Bobi'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-ilyas-sardar.jpeg`,
+    name: 'Mr. Ilyas Sardar',
+    position: 'center 25%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-abid-hussain.jpeg`,
+    name: 'Mr. Abid Hussain'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-sardar-mubasher-azeem.jpeg`,
+    name: 'Mr. Sardar Mubasher Azeem'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-tehseen-irahad.jpeg`,
+    name: 'Mr. Tehseen Irahad',
+    position: 'center 15%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-rashid-gulistan.jpeg`,
+    name: 'Mr. Rashid Gulistan'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-sardar-binyamin.jpeg`,
+    name: 'Mr. Sardar Binyamin',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-sardar-iftikhar-karlal.jpeg`,
+    name: 'Mr. Sardar Iftikhar Karlal'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-muzafar-fareed.jpeg`,
+    name: 'Mr. Muzafar Fareed',
+    position: 'center 20%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-jamshed-zeb.jpeg`,
+    name: 'Mr. Jamshed Zeb',
+    position: 'center 60%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-tariq-gulistan.jpeg`,
+    name: 'Mr. Tariq Gulistan',
+    position: 'center 25%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-ibrar-abbasi.jpeg`,
+    name: 'Mr. Ibrar Abbasi',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-sardar-alam-zeb.jpeg`,
+    name: 'Mr. Sardar Alam Zeb'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-shoaib-hamdani.jpeg`,
+    name: 'Mr. Shoaib Hamdani',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-m-haroon-qasim-shah.jpeg`,
+    name: 'Mr. M.Haroon (Qasim Shah)',
+    position: 'center 25%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-tanveer-ahmad.jpeg`,
+    name: 'Mr. Tanveer Ahmad'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-dr-naeem.jpeg`,
+    name: 'Dr. Naeem Ahmad'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-yasir-rehan.jpeg`,
+    name: 'Mr. Yasir Rehan'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-mumtaz-hussain.jpeg`,
+    name: 'Mr. Mumtaz Hussain'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-haji-raees-jamal.jpeg`,
+    name: 'Mr. Haji Raees Jamal'
+  }
+]
+
+export const founderMembers = [
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-mubasher-yousaf.jpeg`,
+    name: 'Mr. Mubasher Yousaf',
+    role: 'Founder Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-tahir-farooq.jpeg`,
+    name: 'Mr. Tahir Farooq',
+    role: 'Founder Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-azher-nabi-hazarvi.jpeg`,
+    name: 'Mr. Azher Nabi Hazarvi',
+    role: 'Founder Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-haji-khalid-rabbani.jpeg`,
+    name: 'Mr. Haji Khalid Rabbani',
+    role: 'Founder Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-m-haroon-qasim-shah.jpeg`,
+    name: 'Mr. M.Haroon (Qasim Shah)',
+    role: 'Founder Member',
+    position: 'center 10%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-jamshed-zeb.jpeg`,
+    name: 'Mr. Jamshed Zeb',
+    role: 'Founder Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-malik-sajid-zeb.jpeg`,
+    name: 'Mr. Malik Sajid Zeb',
+    role: 'Founder Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-naveed-pervez.jpeg`,
+    name: 'Mr. Naveed Pervez',
+    role: 'Founder Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-zafar-iqbal.jpeg`,
+    name: 'Mr. Zafar Iqbal',
+    role: 'Founder Member',
+    position: 'center 35%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-aftab-younas.jpeg`,
+    name: 'Mr. Aftab Younas',
+    role: 'Founder Member',
+    position: 'center 14%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-arshad-nazeer.jpeg`,
+    name: 'Mr. Arshad Nazeer',
+    role: 'Founder Member',
+    position: 'center 45%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-ibrar-abbasi.jpeg`,
+    name: 'Mr. Ibrar Abbasi',
+    role: 'Founder Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-binyamin-asi.jpeg`,
+    name: 'Mr. Binyamin ASI',
+    role: 'Founder Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-m-sajid-mughal.jpeg`,
+    name: 'Mr. M.Sajid Mughal',
+    role: 'Founder Member',
+    position: 'center 23%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-muzafar-fareed.jpeg`,
+    name: 'Mr. Muzafar Fareed',
+    role: 'Founder Member',
+    position: 'center 20%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-amjad-zareen.jpeg`,
+    name: 'Mr. Amjad Zareen',
+    role: 'Founder Member',
+    position: 'center 80%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}founder-members/mr-arshad-nazeer-sir.jpeg`,
+    name: 'Mr. Arshad Nazeer (Sir)',
+    role: 'Founder Member',
+    position: 'center 22%'
+  }
+]
+
+export const formerMembers = [
+  {
+    image: `${import.meta.env.BASE_URL}former-members/sardar-zahoor-ahmad.jpeg`,
+    name: 'Sardar Zahoor Ahmad',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/aqib-nayab.jpeg`,
+    name: 'Aqib Nayab',
+    role: 'Ex. SC Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/m-ashfaq.jpeg`,
+    name: 'M. Ashfaq',
+    role: 'Ex. SC Member',
+    position: 'center 18%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/ejaz-ur-rehman.jpeg`,
+    name: 'Ejaz-Ur-Rehman',
+    role: 'Ex. SC Member',
+    position: 'center 15%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/waleed-waheed.jpeg`,
+    name: 'Waleed Waheed',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/fahad-zulfiqar.jpeg`,
+    name: 'Fahad Zulfiqar',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/imran-nabi.jpeg`,
+    name: 'Imran Nabi',
+    role: 'Ex. SC Member',
+    position: 'center 28%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/shazad-shamraiz.jpeg`,
+    name: 'Mr. Shazad Shamraiz',
+    role: 'Ex. SC Member',
+    position: 'center 22%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/abdul-basit.jpeg`,
+    name: 'Mr. Abdul Basit',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/tahir-faraz.jpeg`,
+    name: 'Mr. Tahir Faraz',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/malik-moiz-altaf.jpeg`,
+    name: 'Mr. Malik Moiz Altaf',
+    role: 'Ex. SC Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/raja-matloob.jpeg`,
+    name: 'Mr. Raja Matloob',
+    role: 'Ex. SC Member',
+    position: 'center 28%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/maqbool-ahmad.jpeg`,
+    name: 'Mr. Maqbool Ahmad',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/babar-ali.jpeg`,
+    name: 'Mr. Babar Ali',
+    role: 'Ex. SC Member',
+    position: 'center 23%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/m-zahid.jpeg`,
+    name: 'Mr. M. Zahid',
+    role: 'Ex. SC Member',
+    position: 'center 30%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/m-rizwan.jpeg`,
+    name: 'Mr. M. Rizwan',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/sardar-imtiaz.jpeg`,
+    name: 'Mr. Sardar Imtiaz',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/raja-ishtiaq.jpeg`,
+    name: 'Mr. Raja Ishtiaq',
+    role: 'Ex. SC Member',
+    position: 'center 33%'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/danish-shamraiz.jpeg`,
+    name: 'Mr. Danish Shamraiz',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/malik-iqraz-awan.jpeg`,
+    name: 'Mr. Malik Iqraz Awan',
+    role: 'Ex. SC Member'
+  }
 ]
 
 export const fundDetails = [
-  { month: 'September', amount: 'Rs. 69,360' },
-  { month: 'October', amount: 'Rs. 159,440' },
-  { month: 'November', amount: 'Rs. 154,050' }
+  { year: '2022', amount: 'Rs. 611,850' },
+  { year: '2023', amount: 'Rs. 2,438,450' },
+  { year: '2024', amount: 'Rs. 4,550,219' },
+  { year: '2025', amount: 'Rs. 4,574,452' },
+  { year: '2026', amount: 'Rs. 3,757,448' }
 ]
 
-export const expenditureDetails = [
-  { title: 'September Sponsorship Program', amount: 'Rs. 60,000' },
-  { title: 'October Sponsorship Program', amount: 'Rs. 78,000' },
-  { title: 'Sweaters Project', amount: 'Rs. 57,850' },
-  { title: 'November Sponsorship Program', amount: 'Rs. 78,000' }
+export const expenditureImages = [
+  `${import.meta.env.BASE_URL}expenditures/expenditure-13.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-01.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-02.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-03.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-04.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-05.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-06.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-07.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-08.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-09.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-10.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-11.jpeg`,
+  `${import.meta.env.BASE_URL}expenditures/expenditure-12.jpeg`
 ]
 
 export const galleryItems = [
@@ -65,6 +471,12 @@ export const galleryItems = [
   },
   {
     image: `${import.meta.env.BASE_URL}gallery/student-recognition-01.jpeg`,
+    title: 'Recognizing Students',
+    category: 'Education',
+    alt: 'Students and community members during a recognition activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/student-recognition-03.jpeg`,
     title: 'Recognizing Students',
     category: 'Education',
     alt: 'Students and community members during a recognition activity'
@@ -128,6 +540,198 @@ export const galleryItems = [
     title: 'Education in Action',
     category: 'Education',
     alt: 'Students participating in an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/sardar-news.jpeg`,
+    title: 'Acknowledgement from Society',
+    category: 'Appreciation',
+    alt: 'Society acknowledging the efforts of the organization'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-09.jpeg`,
+    title: 'School Bag Support',
+    category: 'Education',
+    alt: 'Students with school bags provided through an education support activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/welfare-support-01.jpeg`,
+    title: 'Appeal for Donation',
+    category: 'Support',
+    alt: 'Appeal for the donation to support needy'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/welfare-support-02.jpeg`,
+    title: 'Donation for Welfare',
+    category: 'Donation',
+    alt: 'Collecting donation for the organization'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/water-supply-01.jpeg`,
+    title: 'Donation for Clean Water',
+    category: 'WaterSupply',
+    alt: 'Donating water pipes for community'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/water-supply-02.jpeg`,
+    title: 'Donation for Clean Water',
+    category: 'WaterSupply',
+    alt: 'Donating water pipes for community'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-01.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-02.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-03.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-10.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-04.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-05.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-06.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-07.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-08.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-11.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-12.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-13.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-14.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-15.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-16.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-17.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-18.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-19.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-20.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-21.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/azadi-22.jpeg`,
+    title: 'Independence Day Celebrations',
+    category: 'Function',
+    alt: 'Independence day celebrations in school'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-01.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-02.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-03.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-04.jpeg`,
+    title: 'Community Gathering',
+    category: 'Community',
+    alt: 'Community members gathered together during a society activity'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}gallery/comunity-05.jpeg`,
+    title: 'Cabinet Members MKWS',
+    category: 'Cabinet',
+    alt: 'Cabinet members gathered together during a society activity'
   }
 ]
 
