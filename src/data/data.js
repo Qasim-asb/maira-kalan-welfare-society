@@ -204,6 +204,11 @@ export const generalBody = [
   {
     image: `${import.meta.env.BASE_URL}general-body/mr-haji-raees-jamal.jpeg`,
     name: 'Mr. Haji Raees Jamal'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}general-body/mr-sardar-shakeel-ahmad.jpg`,
+    name: 'Mr. Sardar Shakeel Ahmad',
+    position: 'center 16%'
   }
 ]
 
@@ -334,6 +339,11 @@ export const formerMembers = [
   {
     image: `${import.meta.env.BASE_URL}former-members/waleed-waheed.jpeg`,
     name: 'Waleed Waheed',
+    role: 'Ex. SC Member'
+  },
+  {
+    image: `${import.meta.env.BASE_URL}former-members/haji-sheraz-ahmad.jpg`,
+    name: 'Haji Sheraz Ahmad',
     role: 'Ex. SC Member'
   },
   {
